@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WebApplication2.Models.Categoria>
+
+@{
+    ViewBag.Title = "Categorías";
+}
+
+<h2> Administrar Categorías</h2>
+   
+
+<p>
+    @Html.ActionLink("Crear Nueva", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            
+            <p>Descripción</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+           
+            @Html.ActionLink("Borrar", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+   
+</table>

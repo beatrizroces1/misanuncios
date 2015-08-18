@@ -1,0 +1,29 @@
+{
+  "siteName": {
+    "value": "ApiRest8162"
+  },
+  "hostingPlanName": {
+    "value": "pla"
+  },
+  "siteLocation": {
+    "value": "North Europe"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "siteMode": {
+    "value": "Limited"
+  },
+  "computeMode": {
+    "value": "0"
+  },
+  "subscriptionId": {
+    "value": "d2a2bdad-c592-48c9-b7ec-0ec4f3da9b78"
+  },
+  "resourceGroup": {
+    "value": "Default-ApplicationInsights-CentralUS"
+  }
+}

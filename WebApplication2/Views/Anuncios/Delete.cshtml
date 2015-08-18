@@ -1,0 +1,67 @@
+﻿@model WebApplication2.Models.Anuncio
+
+@{
+    ViewBag.Title = "Borrado";
+}
+
+<h2>Borrado de Anuncio</h2>
+
+<h3>¿Está seguro que desea eliminar el anuncio?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           
+            
+        </dt>
+
+        <dd>
+            @Html.TextBoxFor(model => model.id_usuario, new { style = "display:none;" })
+        </dd>
+
+        <dt>
+            <p>Categoria</p>
+            
+        </dt>
+
+        <dd>
+
+            @Html.DisplayFor(model => model.categoria)
+        </dd>
+
+        <dt>
+            <p>Título</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.titulo)
+        </dd>
+
+        <dt>
+            <p>Descripción</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            <p>Fecha de Publicación</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaPublicacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al listado", "Index")
+        </div>
+    }
+</div>

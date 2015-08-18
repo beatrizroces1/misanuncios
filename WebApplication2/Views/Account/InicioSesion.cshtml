@@ -1,0 +1,58 @@
+﻿@model WebApplication2.Models.UsuarioInicioSesion
+@{
+    ViewBag.Title = "Iniciar Sesión";
+}
+
+
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            @using (Html.BeginForm("InicioSesion", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+               <h2>Iniciar Sesión</h2>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                   <p>Email</p>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                   <p>Contraseña</p>
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                           <p>Recordar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Iniciar Sesión" class="btn btn-default" />
+                    </div>
+                </div>
+                <p>
+                    @Html.ActionLink("Registro de Usuario", "Register")
+                </p>
+                @* Enable this once you have account confirmation enabled for password reset functionality
+                    <p>
+                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                    </p>*@
+            }
+        </section>
+    </div>
+    
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

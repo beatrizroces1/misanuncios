@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNet.Identity
+@model WebApplication2.Models.IndexViewModel
+@{
+    ViewBag.Title = "Cuenta";
+}
+
+<h2>Gestión de cuenta</h2>
+<hr />
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+
+   
+    <div class="form-group" style="margin-left:75px;margin-bottom:20px;margin-top:20px;">
+        @Html.ActionLink("Cambiar Contraseña", "ChangePassword")
+
+
+    </div>
+    <div class="form-group" style="margin-left:75px;">
+        @Html.ActionLink("Consultar y cambiar datos de contacto", "Edit", "Usuarios")
+
+
+    </div>
+       
+    <div class="form-group" style="margin-left:75px;">
+        @Html.ActionLink("Cambiar ciudad", "EditCiudadPrimero", "Usuarios")
+
+
+    </div>
+
+
+       
+
+    </div>

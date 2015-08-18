@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WebApplication2.Models.Anuncio>
+@{
+    ViewBag.Title = "Buscar";
+}
+
+
+
+    @using (Html.BeginForm("Buscar", "Anuncios", FormMethod.Get))
+    {
+    @Html.AntiForgeryToken()
+<h2>Buscar Anuncios</h2>
+<hr />
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+<div class="form-group">
+    
+    <div class="col-md-10" style="border-radius:5px;border-color: lightgray; padding-bottom:10px; padding-right:10px;padding-left:10px;padding-top:15px;border-style:solid;border-width:0.15px; margin-top:20px;margin-bottom:20px;">
+      <p>
+          <font style="margin-right:20px;">Categoría:</font>
+       @Html.DropDownList("categorias", "Todas")
+      <font style="margin-right:20px;margin-left:20px;">Ciudad:</font>
+       @Html.DropDownList("ciudades", "Todas")
+          <input type="submit" class="btn btn-default" value="Aplicar Filtros" style="margin-left:30px;" />
+       </p>
+    </div>
+</div>
+
+
+
+}
+<table class="table">
+    <tr>
+        <th>
+            <p>Ciudad</p>
+
+        </th>
+
+        <th>
+            <p>Categoria</p>
+
+        </th>
+        <th>
+            <p>Título</p>
+
+        </th>
+        <th>
+            <p>Descripción</p>
+
+        </th>
+        <th>
+            <p>Fecha de Publicación</p>
+
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ciudad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaPublicacion)
+            </td>
+          <td>
+              @Html.ActionLink("Detalles", "DetalleAnuncio", new { id = item.ID }) |
+          </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

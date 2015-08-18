@@ -1,0 +1,76 @@
+﻿@model WebApplication2.Models.Anuncio
+@{
+    ViewBag.Title = "DetalleAnuncio";
+}
+
+<h2>Detalles del Anuncio</h2>
+
+
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+
+            @Html.TextBoxFor(model => model.id_usuario, new { style = "display:none;" })
+        </dt>
+        <dt>
+            <p>Ciudad</p>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciudad)
+        </dd>
+
+        <dt>
+            <p>Categoria</p>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoria)
+        </dd>
+
+        <dt>
+            <p>Título</p>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.titulo)
+        </dd>
+
+        <dt>
+            <p>Descripción</p>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+        <dt>
+            <p>Fecha de publicación</p>
+
+        </dt>
+
+
+        <dd>
+
+            @Html.DisplayFor(model => model.fechaPublicacion)
+        </dd>
+        <dt>
+            <p>Email de contacto</p>
+
+        </dt>
+        <dd>
+
+          <p>@ViewBag.Usuario</p>  
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Volver al listado", "Buscar") 
+</p>

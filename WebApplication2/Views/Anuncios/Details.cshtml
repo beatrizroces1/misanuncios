@@ -1,0 +1,58 @@
+﻿@model WebApplication2.Models.Anuncio
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles del Anuncio</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+         
+            @Html.TextBoxFor(model => model.id_usuario, new { style = "display:none;" })
+        </dt>
+
+        <dt>
+            <p>Categoria</p>
+            
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoria)
+        </dd>
+
+        <dt>
+            <p>Título</p>
+      
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.titulo)
+        </dd>
+
+        <dt>
+            <p>Descripción</p>
+          
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+        <dt>
+            <p>Fecha publicación</p>
+        </dt>
+      
+        <dd>
+          
+          @Html.DisplayFor(model => model.fechaPublicacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Volver al listado", "Index")
+</p>

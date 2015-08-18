@@ -1,0 +1,66 @@
+﻿@model WebApplication2.Models.Usuario
+@{
+    ViewBag.Title = "Registro";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Registro", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+   
+    <hr />
+   
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    <div class="form-group">
+        <p>Nombre</p>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.nombre, new { maxlength = 50, @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <p>Primer Apellido</p>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.apellido1, new { maxlength = 50, @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <p>Segundo Apellido</p>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.apellido2, new { maxlength = 50,@class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <p>Ciudad</p>
+        <div class="col-md-10">
+            
+            @Html.DropDownListFor(m => m.ciudad, ViewData["ciudades"] as List<SelectListItem>, new { style = "width:800px;border-radius:5px;background-colo:white;border-color:lightgray;height:30px;border-width:0.15px;color:grey;" })
+   
+        </div>
+      </div>
+   
+
+        <div class="form-group">
+            <p>Email</p>
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.email, new { maxlength = 100,@class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <p>Contraseña</p>
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.password, new { maxlength = 10, @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="Registrarse" />
+            </div>
+        </div>
+        }
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

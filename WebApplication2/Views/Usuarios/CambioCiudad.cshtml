@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Cambio Datos ";
+}
+
+
+<h2>Cambiar datos de contacto</h2>
+<hr />
+<div class="form-horizontal">
+    <div class="form-group" style="margin-left:50px;margin-top:20px;">
+        <p> No se puede cambiar la ciudad ya que existen anuncios dados de alta en esa ciudad.  </p>
+  
+        <p> Debe eliminar los anuncios y posteriomente proceder al cambio de ciudad.   </p>
+    </div>
+       
+        
+ </div>
+
+
+    <div style="margin-bottom:20px;">
+        @Html.ActionLink("Volver", "Index", "Manage")
+    </div>
+    <div>
+        @Html.ActionLink("Ir a la gestión de anuncios", "Index", "Anuncios")
+    </div>

@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{7E91320A-7BFF-424C-B3C3-36C6D324EC26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{12A7132A-E398-4FBD-AF73-0B3CBE03B2E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{C1A2BF5A-984E-4457-B7AF-9CF01DE25525}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{BFE0CB42-E888-4B3C-B192-16BDE4CF8893}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\ApiRest.json = PublishScripts\Templates\ApiRest.json
+		PublishScripts\Templates\ApiRest.param.dev.json = PublishScripts\Templates\ApiRest.param.dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRest", "ApiRest\ApiRest.csproj", "{942F3984-3F2D-4FC2-BB33-90659AEB0992}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E91320A-7BFF-424C-B3C3-36C6D324EC26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E91320A-7BFF-424C-B3C3-36C6D324EC26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E91320A-7BFF-424C-B3C3-36C6D324EC26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E91320A-7BFF-424C-B3C3-36C6D324EC26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{942F3984-3F2D-4FC2-BB33-90659AEB0992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{942F3984-3F2D-4FC2-BB33-90659AEB0992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{942F3984-3F2D-4FC2-BB33-90659AEB0992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{942F3984-3F2D-4FC2-BB33-90659AEB0992}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1A2BF5A-984E-4457-B7AF-9CF01DE25525} = {12A7132A-E398-4FBD-AF73-0B3CBE03B2E3}
+		{BFE0CB42-E888-4B3C-B192-16BDE4CF8893} = {12A7132A-E398-4FBD-AF73-0B3CBE03B2E3}
+	EndGlobalSection
+EndGlobal
